@@ -38,5 +38,23 @@ conda activate R3.5
 conda search busco
 conda install busco=5.3.2
 
+#服务器挂载：
+sudo fdisk -l 
+#假如是/dev/sdc/
+#查看具体的盘符
+#对新硬盘的分区进行格式化
+mkfs -t ext4 /dev/sdc
+#新建挂载目录：
+/home/project/
+#挂载：
+sudo mount /dev/sdc/ /home/project/
+#卸载挂载：
+#卸载挂载前查看有哪些任务占用该盘
+#接下来通过fuser 命令查找那些程序
+fuser -mv /data
+#有任务需要先关闭占用该盘的任务
+kill -9 6381 25695
+#卸载
+umount /dev/sdc/
 
 
