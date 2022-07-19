@@ -1,0 +1,42 @@
+#下载安装：
+wget -c https://repo.anaconda.com/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh 
+#给执行权限
+chmod 777 Miniconda3-4.7.12.1-Linux-x86_64.sh 
+#运行
+bash iniconda3-4.7.12.1-Linux-x86_64.sh 
+#激活conda：
+cd /miniconda/bin/
+#添加权限
+chmod 777 activate 
+#激活
+. ./activate  
+#当命令行前面出现(base)的时候说明现在已经在conda的环境中了。这时候输入conda list 命令就有反应了
+conda list
+#安装命令
+conda install samtools
+#添加生物信息分析常用的channel，添加的是清华的镜像channel
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
+#另外对channel常用的操作
+#显示安装的频道
+ conda config --set show_channel_urls yes 
+#查看已经添加的channels
+conda config --get channels
+#已添加的channel在哪里查看
+vim ~/.condarc
+#利用conda安装生物信息软件，并指定版本
+conda install busco=5.3.2
+#安装完成后，可以用“which 软件名”来查看该软件安装的位置
+ which busco
+#卸载指定软件:
+conda remove gatk
+#创建conda安装环境
+conda create -n R3.5
+conda activate R3.5
+conda search busco
+conda install busco=5.3.2
+
+
+
