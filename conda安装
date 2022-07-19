@@ -13,7 +13,8 @@ chmod 777 activate
 #当命令行前面出现(base)的时候说明现在已经在conda的环境中了。这时候输入conda list 命令就有反应了
 conda list
 #安装命令
-conda install samtools
+conda install “软件名”
+conda install star
 #添加生物信息分析常用的channel，添加的是清华的镜像channel
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
